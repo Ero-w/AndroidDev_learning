@@ -51,12 +51,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initMsgs() {
-        Msg msg1 = new Msg("Hello guy.", Msg.TYPE_RECEIVED);
+        Msg msg1 = new Msg("Hello, My name is Ben. May I ask you some questions?", Msg.TYPE_RECEIVED);
         msgList.add(msg1);
-        Msg msg2 = new Msg("Hello. Who is that?", Msg.TYPE_SENT);
+        Msg msg2 = new Msg("Sure.", Msg.TYPE_SENT);
         msgList.add(msg2);
-        Msg msg3 = new Msg("This is Tom. Nice talking to you. ", Msg.TYPE_RECEIVED);
+        Msg msg3 = new Msg("What is your father's name?", Msg.TYPE_RECEIVED);
         msgList.add(msg3);
-
+        Msg msg4 = new Msg("Happy!", Msg.TYPE_SENT);
+        msgList.add(msg4);
+        Msg msg5 = new Msg("Then, What is your mother's name?", Msg.TYPE_RECEIVED);
+        msgList.add(msg5);
+        Msg msg6 = new Msg("Smile", Msg.TYPE_SENT);
+        msgList.add(msg6);
+        Msg msg7 = new Msg("Are u joking?", Msg.TYPE_RECEIVED);
+        msgList.add(msg7);
+        Msg msg8 = new Msg("No! That's my sister! I am Kidding. By the way, are u a census staff?", Msg.TYPE_SENT);
+        msgList.add(msg8);
+        Msg msg9 = new Msg("Of course not.", Msg.TYPE_RECEIVED);
+        msgList.add(msg9);
+        Msg msg10 = new Msg("Fuck off!", Msg.TYPE_SENT);
+        msgList.add(msg10);
+        Msg msg11 = new Msg("Ok, see you later, Kidding.", Msg.TYPE_RECEIVED);
+        msgList.add(msg11);
     }
 }
