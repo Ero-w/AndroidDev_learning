@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +23,8 @@ import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MaterialTest";
 
     private DrawerLayout mDrawerLayout;
 
@@ -38,9 +41,11 @@ public class MainActivity extends AppCompatActivity {
 
     private SwipeRefreshLayout swipeRefresh;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate");
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -84,15 +89,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //lambda表达式改写
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        fab.setOnClickListener(v ->  {{
                 //Toast.makeText(MainActivity.this, "FAB clicked", Toast.LENGTH_SHORT).show();
                 Snackbar.make(v, "Data deleted", Snackbar.LENGTH_SHORT)
-                        .setAction("Undo", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
+                        .setAction("Undo", view -> {{
                                 Toast.makeText(MainActivity.this, "Data restored",
                                         Toast.LENGTH_SHORT).show();
                             }
@@ -118,6 +120,42 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG, "onRestart");
     }
 
     private void refreshFruits() {

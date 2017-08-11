@@ -25,3 +25,11 @@
     </application>
 
 </manifest>
+
+<!--
+进入多窗口模式时活动不会被重新创建
+android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
+
+只支持竖屏使用
+android:screenOrientation="portrait"
+-->
